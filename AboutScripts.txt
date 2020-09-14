@@ -1,0 +1,28 @@
+You will notice that there 3 scripts available:
+
+1) Create Script
+2) Delete Script
+3) Update Script
+
+
+Create Script
+=============
+
+This script uses the Infrastruscture as code principle to automate the creation of a stack in AWS. In this 
+script, a VPC , and EC2 and scurity groups are created. A stack is basically a collection of resources in AWS 
+cloud.This is done in cloud fomation
+
+Makes use of one cloudformation create stack command using Infrastructure as code:
+
+Below is an example of how you would do manually:
+
+#Where testSTACK is the name of the stack to be created in AWS
+template body is our YAMl file with the stack parameters.
+
+aws cloudformation create-stack --stack-name testSTACK --template-body file://testcfn.yml --region us-east-1
+
+Syntax::
+
+create.sh testSTACK jenkins-server.yml ==>testSTACK -is the name of our stack
+				       ==>jenkins-server.yml -is our parameter file with the logic,and commands to help automate the creation of a VPC, Internet Gateway, Security Group and an EC2 instance with Jenkins /docker and GIT installed in it		
+
